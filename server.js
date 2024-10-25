@@ -9,8 +9,18 @@ const { allowedDomains } = config;
 
 const app = express();
 
+const corsOptions = {
+    origin: allowedDomains,
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
+
+
+
 app.use(express.json());
-app.use(cors({ origin: allowedDomains, credentials: true }));
+
 
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
