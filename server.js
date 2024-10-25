@@ -10,7 +10,13 @@ const { allowedDomains } = config;
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: allowedDomains, credentials: true }));
+
+
+app.use(cors({
+    origin: 'http://aivoicebot.brandcorridor.lk', // Specify the origin you want to allow
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
