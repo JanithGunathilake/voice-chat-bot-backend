@@ -1,4 +1,4 @@
 
 module.exports = {
-  allowedDomains: ['http://localhost:3000'] // Add your frontend URL
+  allowedDomains: ['http://aivoicebot.brandcorridor.lk/'] // Add your frontend URL
 };
